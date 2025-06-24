@@ -56,4 +56,8 @@ public class BasePage extends Page {
     public String getPageUrl() {
         return driver.getCurrentUrl();
     }
+
+    public String getPageTitle() {
+        return driver.getTitle();
+    }
 }
