@@ -45,7 +45,7 @@ public class BasePage extends Page {
 
     @Override
     public void clickElement(By locator) {
-        getWebElement(locator).click();
+        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 
     @Override

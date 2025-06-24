@@ -17,7 +17,7 @@ public class LoginTest extends BaseTest {
     public void checkLoginPageUrl() {
         LoginPage lPage = pg.goTo(LoginPage.class);
         String url = lPage.getPageUrl();
-        Assert.assertTrue(url.contains("ParaBank"));
+        Assert.assertTrue(url.contains("parabank"));
     }
 
     @Test

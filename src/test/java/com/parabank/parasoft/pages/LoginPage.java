@@ -1,5 +1,6 @@
 package com.parabank.parasoft.pages;
 
+import com.parabank.parasoft.util.ParaBankUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -29,12 +30,13 @@ public class LoginPage extends BasePage {
     }
 
     public CustomerLookupPage clickForgotPassword() {
-        clickElement(By.cssSelector("a[href='/parabank/forgot-password.htm']"));
+        ParaBankUtil.waitForPageLoad();
+        clickElement(By.cssSelector("a[href='lookup.htm']"));
         return goTo(CustomerLookupPage.class);
     }
 
     public RegisterPage clickRegister() {
-        clickElement(By.cssSelector("a[href='/parabank/register.htm']"));
+        clickElement(By.cssSelector("a[href='register.htm']"));
         return goTo(RegisterPage.class);
     }
 
@@ -43,6 +45,7 @@ public class LoginPage extends BasePage {
     }
 
     public boolean hasLoginError() {
+        setWait(By.cssSelector("p.error"));
         return getWebElements(By.cssSelector("p.error")).size() > 0; //1 0
     }
 }
