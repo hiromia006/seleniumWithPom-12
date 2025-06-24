@@ -45,11 +45,19 @@ public class BasePage extends Page {
 
     @Override
     public void clickElement(By locator) {
-        getWebElement(locator).click();
+        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 
     @Override
     public void setWait(By locator) {
         wait.until(ExpectedConditions.visibilityOf(getWebElement(locator)));
+    }
+
+    public String getPageUrl() {
+        return driver.getCurrentUrl();
+    }
+
+    public String getPageTitle() {
+        return driver.getTitle();
     }
 }
