@@ -29,7 +29,7 @@ public abstract class Page {
 
     public abstract void setWait(By locator);
 
-    public <T extends BasePage> T getInstance(Class<T> pageClass) {
+    public <T extends BasePage> T goTo(Class<T> pageClass) {
         try {
             return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);
         } catch (InvocationTargetException e) {

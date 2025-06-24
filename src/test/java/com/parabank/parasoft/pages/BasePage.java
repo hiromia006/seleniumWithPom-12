@@ -52,4 +52,8 @@ public class BasePage extends Page {
     public void setWait(By locator) {
         wait.until(ExpectedConditions.visibilityOf(getWebElement(locator)));
     }
+
+    public String getPageUrl() {
+        return driver.getCurrentUrl();
+    }
 }
