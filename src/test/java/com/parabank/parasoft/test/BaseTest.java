@@ -22,7 +22,7 @@ public class BaseTest {
     Page pg;
     private Properties prop;
 
-    public BaseTest(){
+    public BaseTest() {
         prop = new Properties();
         String path = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
 
@@ -39,7 +39,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void browserSetup() {
-        String browserName =prop.getProperty("browserName"); // Change to "chrome" for ChromeDriver
+        String browserName = prop.getProperty("browserName"); // Change to "chrome" for ChromeDriver
 
         if (Objects.equals(browserName, "firefox")) {
             String os = System.getProperty("os.name").toLowerCase();
@@ -82,5 +82,10 @@ public class BaseTest {
 
     public String getPassword() {
         return prop.getProperty("password");
+    }
+
+
+    public WebDriver getWebDriver() {
+        return driver;
     }
 }

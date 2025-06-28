@@ -10,6 +10,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage fillUsername(String username) {
+        addInfo("Filling in username: " + username);
         getWebElement(By.name("username")).sendKeys(username);
         return this;
     }

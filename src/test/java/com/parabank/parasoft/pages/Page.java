@@ -1,5 +1,7 @@
 package com.parabank.parasoft.pages;
 
+import com.aventstack.extentreports.Status;
+import com.parabank.parasoft.report.ReportTestManager;
 import com.parabank.parasoft.util.ParaBankUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -45,4 +47,5 @@ public abstract class Page {
             throw new RuntimeException(e);
         }
     }
+
 }
