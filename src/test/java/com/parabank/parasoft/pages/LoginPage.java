@@ -48,4 +48,12 @@ public class LoginPage extends BasePage {
         setWait(By.cssSelector("p.error"));
         return getWebElements(By.cssSelector("p.error")).size() > 0; //1 0
     }
+
+   public OverviewPage doLogin(String username, String password) {
+        return fillUsername(username)
+                .fillPassword(password)
+                .clickLoginButton();
+    }
+
+
 }

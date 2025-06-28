@@ -4,6 +4,7 @@ import com.parabank.parasoft.util.ParaBankUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.lang.reflect.InvocationTargetException;
@@ -28,6 +29,8 @@ public abstract class Page {
     public abstract void clickElement(By locator);
 
     public abstract void setWait(By locator);
+
+    public abstract Select getSelect(By locator);
 
     public <T extends BasePage> T goTo(Class<T> pageClass) {
         try {

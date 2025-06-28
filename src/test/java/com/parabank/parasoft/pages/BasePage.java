@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -51,6 +52,12 @@ public class BasePage extends Page {
     @Override
     public void setWait(By locator) {
         wait.until(ExpectedConditions.visibilityOf(getWebElement(locator)));
+    }
+
+    @Override
+    public Select getSelect(By locator) {
+
+        return new Select(getWebElement(locator));
     }
 
     public String getPageUrl() {
