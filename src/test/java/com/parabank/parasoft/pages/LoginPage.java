@@ -10,6 +10,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage fillUsername(String username) {
+        addInfo("Filling in username: " + username);
         getWebElement(By.name("username")).sendKeys(username);
         return this;
     }
@@ -36,6 +37,7 @@ public class LoginPage extends BasePage {
     }
 
     public RegisterPage clickRegister() {
+        ParaBankUtil.waitForPageLoad();
         clickElement(By.cssSelector("a[href='register.htm']"));
         return goTo(RegisterPage.class);
     }
@@ -48,4 +50,12 @@ public class LoginPage extends BasePage {
         setWait(By.cssSelector("p.error"));
         return getWebElements(By.cssSelector("p.error")).size() > 0; //1 0
     }
+
+   public OverviewPage doLogin(String username, String password) {
+        return fillUsername(username)
+                .fillPassword(password)
+                .clickLoginButton();
+    }
+
+
 }

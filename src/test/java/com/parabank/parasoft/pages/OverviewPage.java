@@ -8,7 +8,19 @@ public class OverviewPage extends BasePage{
         super(driver);
     }
 
-    public boolean HasLogoutBtn() {
+    public boolean hasLogoutBtn() {
         return getWebElements(By.cssSelector("a[href='logout.htm']")).size() > 0;
     }
+
+    public OpenNewAccountPage clickOpenNewAccountBtn() {
+        clickElement(By.cssSelector("a[href='openaccount.htm']"));
+        return goTo(OpenNewAccountPage.class);
+    }
+
+    public BillPaymentServicePage clickBillPaymentService() {
+        clickElement(By.cssSelector("a[href='billpay.htm']"));
+        return goTo(BillPaymentServicePage.class);
+    }
+
+
 }
