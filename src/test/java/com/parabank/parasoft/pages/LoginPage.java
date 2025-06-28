@@ -36,6 +36,7 @@ public class LoginPage extends BasePage {
     }
 
     public RegisterPage clickRegister() {
+        ParaBankUtil.waitForPageLoad();
         clickElement(By.cssSelector("a[href='register.htm']"));
         return goTo(RegisterPage.class);
     }

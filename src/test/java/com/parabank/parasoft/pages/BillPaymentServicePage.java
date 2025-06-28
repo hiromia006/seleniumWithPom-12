@@ -52,8 +52,8 @@ public class BillPaymentServicePage extends BasePage{
         return this;
     }
 
-    public BillPaymentServicePage clickSendPaymentButton() {
+    public BillPaymentCompletePage clickSendPaymentButton() {
         clickElement(By.cssSelector("input[value='Send Payment']"));
-        return this;
+        return goTo(BillPaymentCompletePage.class);
     }
 }
