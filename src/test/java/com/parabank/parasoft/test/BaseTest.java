@@ -56,7 +56,7 @@ public class BaseTest {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
             driver = new ChromeDriver(options);
-        } else if (Objects.equals(browserName, "firefox-headless")) {
+        } else if (Objects.equals(browserName, "Ob")) {
             // Set headless mode for Firefox
             FirefoxOptions options = new FirefoxOptions();
             options.addArguments("--headless");
